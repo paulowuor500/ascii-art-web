@@ -24,7 +24,7 @@ func init() {
 }
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-	if r.URL.path != "/" {
+	if r.URL.Path != "/" {
 		http.Error(w, "404 Not Found", http.StatusNotFound)
 		return
 	}
