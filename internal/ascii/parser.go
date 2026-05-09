@@ -11,6 +11,10 @@ func loadBanner(path string) ([]string, error) {
 		return nil, err
 	}
 
-	lines := strings.Split(string(data), "\n")
+	// Remove Windows carriage returns
+	content := strings.ReplaceAll(string(data), "\r", "")
+
+	lines := strings.Split(content, "\n")
+
 	return lines, nil
 }
